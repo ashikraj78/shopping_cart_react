@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./App.css";
 import Cart from "./Cart.js";
 
@@ -6,7 +6,12 @@ export default function ListProducts({ filterProducts, setFilterProducts }) {
   let fp = [...filterProducts];
   const [showCartPage, setShowCartPage] = useState(false);
   const [value, setValue] = useState("selected");
-  const [cart, setCart] = useState([]);
+  const [cart, setCart] = useState(
+    JSON.parse(localStorage.getItem("cartItems"))
+  );
+  useEffect(() => {
+    localStorage.setItem("cartItems", JSON.stringify(cart));
+  }, [cart]);
   function handleChange(event) {
     setValue(event.target.value);
     if (event.target.value === "ascending") {
