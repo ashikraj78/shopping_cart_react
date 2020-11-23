@@ -78,6 +78,7 @@
   border-radius: 50%;
   margin: 10px;
   display: block;
+  cursor: pointer;
 }
 .sizeComponent {
   width: 20%;
@@ -142,8 +143,9 @@
   position: fixed;
   background: #1b1a20;
   color: white;
-  height: 100vh;
+  height: 90vh;
   width: 30%;
+  overflow-y: scroll;
 }
 .cartPage span {
   font-size: 3rem;

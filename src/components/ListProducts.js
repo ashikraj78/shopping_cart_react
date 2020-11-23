@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
-import "./App.css";
 import Cart from "./Cart.js";
+import AddCart from "./AddCart";
 
 export default function ListProducts({ filterProducts, setFilterProducts }) {
   let fp = [...filterProducts];
@@ -81,34 +81,11 @@ export default function ListProducts({ filterProducts, setFilterProducts }) {
                 <img src={`/static/products/${product.sku}_1.jpg`} alt="" />
                 <p>{product.title}</p>
                 <p>${product.price}</p>
-                <button
-                  onClick={() => {
-                    setShowCartPage(true);
-                    setCart((prevState) => {
-                      let index = prevState.findIndex(
-                        (p) => p.id === product.id
-                      );
-                      let final = prevState;
-                      if (index !== -1) {
-                        final = prevState.map((prod, i) => {
-                          if (i === index) {
-                            return {
-                              ...prod,
-                              quantity: prod.quantity + 1,
-                            };
-                          }
-                          return prod;
-                        });
-                      } else {
-                        final = prevState.concat({ ...product, quantity: 1 });
-                      }
-                      return final;
-                    });
-                  }}
-                  className="addcart"
-                >
-                  add to cart
-                </button>
+                <AddCart
+                  product={product}
+                  setShowCartPage={setShowCartPage}
+                  setCart={setCart}
+                />
               </div>
             );
           })}

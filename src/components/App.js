@@ -1,8 +1,7 @@
 import React, { useState } from "react";
-import "./App.css";
 import ListProducts from "./ListProducts";
 import ProductSize from "./ProductSize";
-import { products } from "./products.json";
+import { products } from "../products.json";
 
 function App() {
   const [filterProducts, setFilterProducts] = useState(products);

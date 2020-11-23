@@ -1,6 +1,5 @@
 import React, { useState } from "react";
-import "./App.css";
-import { products } from "./products.json";
+import { products } from "../products.json";
 
 export default function ProductSize({ filterProducts, setFilterProducts }) {
   let [sizes, setSizes] = useState(
