@@ -36,16 +36,18 @@ export default function Cart({
             <div className="cartCard">
               <img src={`/static/products/${product.sku}_2.jpg`} alt="" />
               <div>
-                <button
-                  onClick={() => {
-                    setCart([
-                      ...cart.slice(0, index),
-                      ...cart.slice(index + 1),
-                    ]);
-                  }}
-                >
-                  X
-                </button>
+                <div className="closeCartCard">
+                  <button
+                    onClick={() => {
+                      setCart([
+                        ...cart.slice(0, index),
+                        ...cart.slice(index + 1),
+                      ]);
+                    }}
+                  >
+                    X
+                  </button>
+                </div>
                 <div className="cartCardDescription">
                   <p>{product.title}</p>
                   <p className="cartProductPrice">${product.price}</p>

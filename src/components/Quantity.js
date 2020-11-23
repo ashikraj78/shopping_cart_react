@@ -3,7 +3,7 @@ import React from "react";
 export default function Quantity({ product, setCart }) {
   return (
     <div className="quantity">
-      <p>Quantity:{product.quantity}</p>
+      <p>Quantity : {product.quantity}</p>
       <div className="quant">
         <button
           onClick={() => {

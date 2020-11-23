@@ -37,10 +37,8 @@
 .productcard {
   background: rgb(238, 238, 238);
   margin: 0.5rem 1rem;
-  /* height: 150px;
-  width: 200px; */
   border-radius: 5px;
-  padding: 10px;
+  padding: 2px;
   text-align: center;
   border: 1px solid rgb(131, 131, 131);
 }
@@ -81,6 +79,7 @@
   cursor: pointer;
 }
 .sizeComponent {
+  margin-top: 80px;
   width: 20%;
   padding-left: 1rem;
   position: fixed;
@@ -88,7 +87,7 @@
 
 .home {
   display: flex;
-  margin-top: 5rem;
+  margin-top: 1rem;
   position: relative;
 }
 
@@ -114,7 +113,7 @@
   font-size: 1.5rem;
   padding: 5px;
   margin-left: 10px;
-  margin-right: 50px;
+  margin-right: 120px;
 }
 .priceShorting input {
   font-size: 1.5rem;
@@ -143,7 +142,7 @@
   position: fixed;
   background: #1b1a20;
   color: white;
-  height: 90vh;
+  height: 81vh;
   width: 30%;
   overflow-y: scroll;
 }
@@ -182,12 +181,16 @@
   border-top: 1px solid black;
   /* background-image: url(../public/static/sprite_delete-icon.png); */
 }
-.cartCard button {
-  cursor: pointer;
-  color: black;
-  font-size: 1.4rem;
+.closeCartCard {
   text-align: right;
-  display: block;
+}
+.cartCard button {
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  color: #27252e;
+  background: black;
+  font-size: 1.4rem;
   margin-bottom: 0;
   font-weight: 900;
 }
@@ -244,17 +247,20 @@
 .quantity {
   display: flex;
   justify-content: space-between;
+  align-items: center;
 }
 .quant {
   display: flex;
 }
 
 .minusQuantity {
-  padding: 2px 10px;
+  padding: 0 10px;
+  height: 30px;
 }
 .addQuantity {
-  padding: 2px 8px;
+  padding: 0 8px;
   margin-left: 5px;
+  height: 30px;
 }
 li {
   list-style: none;
