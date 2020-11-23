@@ -28,6 +28,39 @@
   color: #61dafb;
 }
 
+.products {
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: 100px;
+}
+
+.productcard {
+  background: rgb(238, 238, 238);
+  margin: 0.5rem 1rem;
+  /* height: 150px;
+  width: 200px; */
+  border-radius: 5px;
+  padding: 10px;
+  text-align: center;
+  border: 1px solid rgb(131, 131, 131);
+}
+.productcard:hover {
+  background: rgb(214, 214, 214);
+}
+
+.addcart {
+  background-color: rgb(131, 131, 131);
+  color: white;
+  border-radius: 5px;
+  width: 100%;
+  font-size: 1.5rem;
+  padding: 10px 0;
+  cursor: pointer;
+}
+.addcart:hover {
+  background: red;
+}
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
@@ -35,4 +68,192 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.size {
+  border: 1px solid red;
+  height: 50px;
+  width: 50px;
+  text-align: center;
+  border-radius: 50%;
+  margin: 10px;
+  display: block;
+}
+.sizeComponent {
+  width: 20%;
+  padding-left: 1rem;
+  position: fixed;
+}
+
+.home {
+  display: flex;
+  margin-top: 5rem;
+  position: relative;
+}
+
+.activeClass {
+  background: black;
+  color: white;
+}
+
+.productLength {
+  margin-left: 120px;
+}
+
+.priceShorting {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  /* text-align: right;
+  margin-right: 50px; */
+  font-size: 1.5rem;
+}
+
+.priceShorting select {
+  font-size: 1.5rem;
+  padding: 5px;
+  margin-left: 10px;
+  margin-right: 50px;
+}
+.priceShorting input {
+  font-size: 1.5rem;
+  padding: 5px;
+}
+
+.cart {
+  height: 80px;
+  width: 80px;
+  background: black;
+  right: 0px;
+  top: 0px;
+  position: fixed;
+  cursor: pointer;
+}
+.cartItems {
+  background: yellow;
+  height: 15x;
+  width: 40px;
+  padding: 1px;
+  border-radius: 50%;
+}
+.cartPage {
+  right: 0px;
+  top: -10px;
+  position: fixed;
+  background: #1b1a20;
+  color: white;
+  height: 100vh;
+  width: 30%;
+}
+.cartPage span {
+  font-size: 3rem;
+  color: white;
+  margin: 10px;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.cartHero {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.5rem;
+}
+.cartHero img {
+  width: 50px;
+  margin-right: 1rem;
+}
+.cartHero p {
+  background: yellow;
+  color: black;
+  padding: 5px;
+  margin: 0 10px;
+  width: 28px;
+  text-align: center;
+  border-radius: 50%;
+}
+
+.cartCard {
+  display: flex;
+  margin: 0 2rem;
+  padding: 1rem 0;
+  border-top: 1px solid black;
+  /* background-image: url(../public/static/sprite_delete-icon.png); */
+}
+.cartCard button {
+  cursor: pointer;
+  color: black;
+  font-size: 1.4rem;
+  text-align: right;
+  display: block;
+  margin-bottom: 0;
+  font-weight: 900;
+}
+.cartCardDescription {
+  display: flex;
+  justify-content: space-between;
+  width: 300px;
+  font-size: 1.2rem;
+}
+.cartCardDescription p {
+  margin-top: 10px;
+}
+.cartCard img {
+  width: 20%;
+  margin-right: 2rem;
+}
+.cartProductPrice {
+  color: yellow;
+}
+.totalAmount {
+  color: yellow;
+  font-size: 2rem;
+}
+.cartTotal {
+  display: flex;
+  justify-content: space-between;
+  margin: 0 2rem;
+}
+.cartTotal p {
+  color: rgb(131, 131, 131);
+  font-size: 1.5rem;
+}
+.checkout {
+  background: rgb(14, 14, 14);
+  color: white;
+  padding: 20px;
+  font-size: 1.2rem;
+  border: none;
+  width: 100%;
+  margin: 0 2rem 0 2rem;
+  cursor: pointer;
+}
+.checkout:hover {
+  background: black;
+}
+.cartAmount {
+  position: fixed;
+  z-index: 10;
+  width: 30%;
+  background: rgb(36, 36, 36);
+  right: 0;
+  bottom: 0;
+}
+.quantity {
+  display: flex;
+  justify-content: space-between;
+}
+.quant {
+  display: flex;
+}
+
+.minusQuantity {
+  padding: 2px 10px;
+}
+.addQuantity {
+  padding: 2px 8px;
+  margin-left: 5px;
+}
+li {
+  list-style: none;
 }
