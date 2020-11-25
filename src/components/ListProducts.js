@@ -1,11 +1,11 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import Cart from "./Cart.js";
 import AddCart from "./AddCart";
 
 export default function ListProducts({ filterProducts, setFilterProducts }) {
-  let fp = [...filterProducts];
   const [showCartPage, setShowCartPage] = useState(false);
   const [value, setValue] = useState("selected");
+  const [filter, setFilter] = useState("selected");
   const [cart, setCart] = useState(
     JSON.parse(localStorage.getItem("cartItems"))
   );
@@ -14,19 +14,40 @@ export default function ListProducts({ filterProducts, setFilterProducts }) {
   }, [cart]);
   function handleChange(event) {
     setValue(event.target.value);
-    if (event.target.value === "ascending") {
-      fp.sort(function (a, b) {
-        return a.price - b.price;
-      });
-      setFilterProducts(fp);
-    }
-    if (event.target.value === "decending") {
-      fp.sort(function (a, b) {
+
+    setFilter(event.target.value);
+    // if (event.target.value === "ascending") {
+    //   let ascendingProducts = [...filterProducts].sort(function (a, b) {
+    //     return a.price - b.price;
+    //   });
+    //   setFilterProducts(ascendingProducts);
+    // }
+    // if (event.target.value === "decending") {
+    //   let decendingProducts = [...filterProducts].sort(function (a, b) {
+    //     return b.price - a.price;
+    //   });
+    //   setFilterProducts(decendingProducts);
+    // }
+  }
+
+  useEffect(() => {
+    let sortedProducts;
+    if (filter === "decending") {
+      sortedProducts = [...filterProducts].sort(function (a, b) {
         return b.price - a.price;
       });
-      setFilterProducts(fp);
     }
-  }
+    if (filter === "ascending") {
+      sortedProducts = [...filterProducts].sort(function (a, b) {
+        return a.price - b.price;
+      });
+    }
+    if (filter === "selected") {
+      sortedProducts = [...filterProducts];
+    }
+
+    setFilterProducts(sortedProducts);
+  }, [filter]);
   return (
     <div>
       {!showCartPage ? (
@@ -36,7 +57,7 @@ export default function ListProducts({ filterProducts, setFilterProducts }) {
           }}
           className="cart"
         >
-          <img src="/static/bag-icon.png" alt="cart" />
+          <img src="static/bag-icon.png" alt="cart" />
           <div className="cartItems">
             {!cart ? (
               <p>0</p>
@@ -67,9 +88,7 @@ export default function ListProducts({ filterProducts, setFilterProducts }) {
           <select value={value} onChange={handleChange}>
             <option value="ascending">Lowest to highest</option>
             <option value="decending">Highest to lowest</option>
-            <option value="selected" selected>
-              Select
-            </option>
+            <option value="selected">Select</option>
           </select>
         </form>
       </div>
@@ -77,13 +96,14 @@ export default function ListProducts({ filterProducts, setFilterProducts }) {
         {filterProducts &&
           filterProducts.map((product) => {
             return (
-              <div className="productcard">
-                <img src={`/static/products/${product.sku}_1.jpg`} alt="" />
+              <div className="productcard" key={product.sku}>
+                <img src={`static/products/${product.sku}_1.jpg`} alt="" />
                 <p>{product.title}</p>
                 <p>${product.price}</p>
                 <AddCart
                   product={product}
                   setShowCartPage={setShowCartPage}
+                  cart={cart}
                   setCart={setCart}
                 />
               </div>

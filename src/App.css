@@ -1,3 +1,6 @@
+* {
+  box-sizing: border-box;
+}
 .App {
   text-align: center;
 }
@@ -42,8 +45,15 @@
   text-align: center;
   border: 1px solid rgb(131, 131, 131);
 }
+.productcard img {
+  height: 335px;
+  width: 250px;
+  border-radius: 5px;
+}
+
 .productcard:hover {
   background: rgb(214, 214, 214);
+  border: 1px solid #ff0000;
 }
 
 .addcart {
@@ -56,7 +66,8 @@
   cursor: pointer;
 }
 .addcart:hover {
-  background: red;
+  background: #ff0000c5;
+  /* color: #ff0000; */
 }
 
 @keyframes App-logo-spin {
@@ -98,6 +109,7 @@
 
 .productLength {
   margin-left: 120px;
+  font-size: 1.2rem;
 }
 
 .priceShorting {
@@ -110,13 +122,13 @@
 }
 
 .priceShorting select {
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   padding: 5px;
   margin-left: 10px;
   margin-right: 120px;
 }
 .priceShorting input {
-  font-size: 1.5rem;
+  font-size: 1rem;
   padding: 5px;
 }
 
@@ -132,7 +144,7 @@
 .cartItems {
   background: yellow;
   height: 15x;
-  width: 40px;
+  width: 45px;
   padding: 1px;
   border-radius: 50%;
 }
@@ -142,8 +154,8 @@
   position: fixed;
   background: #1b1a20;
   color: white;
-  height: 81vh;
-  width: 30%;
+  height: 78vh;
+  width: 350px;
   overflow-y: scroll;
 }
 .cartPage span {
@@ -169,14 +181,14 @@
   color: black;
   padding: 5px;
   margin: 0 10px;
-  width: 28px;
+  width: 40px;
   text-align: center;
   border-radius: 50%;
 }
 
 .cartCard {
   display: flex;
-  margin: 0 2rem;
+  margin: 0 0.5rem;
   padding: 1rem 0;
   border-top: 1px solid black;
   /* background-image: url(../public/static/sprite_delete-icon.png); */
@@ -197,15 +209,15 @@
 .cartCardDescription {
   display: flex;
   justify-content: space-between;
-  width: 300px;
+  width: 200px;
   font-size: 1.2rem;
 }
 .cartCardDescription p {
   margin-top: 10px;
 }
 .cartCard img {
-  width: 20%;
-  margin-right: 2rem;
+  margin-right: 1rem;
+  width: 100px;
 }
 .cartProductPrice {
   color: yellow;
@@ -226,11 +238,11 @@
 .checkout {
   background: rgb(14, 14, 14);
   color: white;
-  padding: 20px;
+  padding: 5px;
   font-size: 1.2rem;
   border: none;
   width: 100%;
-  margin: 0 2rem 0 2rem;
+  margin: 10px;
   cursor: pointer;
 }
 .checkout:hover {
@@ -238,10 +250,10 @@
 }
 .cartAmount {
   position: fixed;
-  z-index: 10;
-  width: 30%;
+  z-index: 5;
+  width: 347px;
   background: rgb(36, 36, 36);
-  right: 0;
+  /* right: 0; */
   bottom: 0;
 }
 .quantity {

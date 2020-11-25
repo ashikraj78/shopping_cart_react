@@ -1,14 +1,7 @@
 import React from "react";
 import Quantity from "./Quantity";
 
-export default function Cart({
-  showCartPage,
-  setShowCartPage,
-  cart,
-  setCart,
-  quantity,
-  setQuantity,
-}) {
+export default function Cart({ showCartPage, setShowCartPage, cart, setCart }) {
   return (
     <div className="cartPage">
       <span
@@ -19,7 +12,7 @@ export default function Cart({
         X
       </span>
       <div className="cartHero">
-        <img src="/static/bag-icon.png" alt="cart" />
+        <img src="static/bag-icon.png" alt="cart" />
         <p>
           {cart.reduce(function (accum, cv) {
             return accum + cv.quantity;
@@ -34,7 +27,7 @@ export default function Cart({
           });
           return (
             <div className="cartCard">
-              <img src={`/static/products/${product.sku}_2.jpg`} alt="" />
+              <img src={`static/products/${product.sku}_2.jpg`} alt="" />
               <div>
                 <div className="closeCartCard">
                   <button
